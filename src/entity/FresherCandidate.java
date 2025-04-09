@@ -18,9 +18,9 @@ public class FresherCandidate extends Candidate{
     public void setGraduationRank(String graduationRank) {
         this.graduationRank = graduationRank;
     }
-    public static void inTieuDe() {
+    public static String inTieuDe() {
         Candidate.inTieuDe();
-        System.out.printf("%20s\n", "rank");
+        return "%20s\n".formatted( "rank");
     }
 
     @Override

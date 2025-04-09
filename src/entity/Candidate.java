@@ -58,9 +58,9 @@ public class Candidate {
                 '}';
     }
 
-    public static void inTieuDe() {
+    public static String inTieuDe() {
 
-        System.out.printf("%10s%10s%12s%20s","FirstName","LastName","phone",
+        return "%10s%10s%12s%20s".formatted("FirstName","LastName","phone",
                 "Email");
 
     }

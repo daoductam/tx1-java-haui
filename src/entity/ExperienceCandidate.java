@@ -37,9 +37,9 @@ public class ExperienceCandidate extends Candidate{
                 '}';
     }
 
-    public static void inTieuDe() {
+    public static String inTieuDe() {
         Candidate.inTieuDe();
-        System.out.printf("%10s%20s\n","exp","pro skill");
+        return "%10s%20s\n".formatted("exp","pro skill");
     }
 
     @Override

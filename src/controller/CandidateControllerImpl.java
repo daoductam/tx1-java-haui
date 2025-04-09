@@ -14,34 +14,39 @@ public class CandidateControllerImpl implements CandidateController{
     static int tuychon;;
     @Override
     public void nhap() {
-
-        System.out.println("Nhap\n\t1.Fresher\n2.Experience");
-        sc.nextInt();
-        sc.nextLine();
-        System.out.println("Nhap First Name: ");
-        String firstName = sc.nextLine();
-        System.out.println("Nhap Last Name: ");
-        String lastName = sc.nextLine();
-        System.out.println("Nhap phone: ");
-        String phone = sc.nextLine();
-        System.out.println("Nhap email: ");
-        String email = sc.nextLine();
-        if (tuychon==2) {
-            System.out.println("Nhap Exp In Year: ");
-            int expIntYear = sc.nextInt();
+        while (tuychon != 3) {
+            System.out.println("Nhap\n\t1.Fresher\n2.Experience\n3.Quit");
+            tuychon = sc.nextInt();
             sc.nextLine();
-            System.out.println("Nhap pro skill: ");
-            String proSkill = sc.nextLine();
-            candidates.add(new ExperienceCandidate(firstName, lastName,phone
-            ,email,expIntYear,proSkill));
+            if (tuychon == 3) {
+                break;
+            }
+            System.out.println("Nhap First Name: ");
+            String firstName = sc.nextLine();
+            System.out.println("Nhap Last Name: ");
+            String lastName = sc.nextLine();
+            System.out.println("Nhap phone: ");
+            String phone = sc.nextLine();
+            System.out.println("Nhap email: ");
+            String email = sc.nextLine();
+            if (tuychon == 2) {
+                System.out.println("Nhap Exp In Year: ");
+                int expIntYear = sc.nextInt();
+                sc.nextLine();
+                System.out.println("Nhap pro skill: ");
+                String proSkill = sc.nextLine();
+                candidates.add(new ExperienceCandidate(firstName, lastName, phone
+                        , email, expIntYear, proSkill));
+            }
+
+            if (tuychon == 1) {
+                System.out.println("Nhap Graduation Rank: ");
+                String graduationRank = sc.nextLine();
+                candidates.add(new FresherCandidate(firstName, lastName, phone,
+                        email, graduationRank));
+            }
         }
 
-        if (tuychon==1) {
-            System.out.println("Nhap Graduation Rank: ");
-            String graduationRank = sc.nextLine();
-            candidates.add(new FresherCandidate(firstName, lastName,phone,
-                    email,graduationRank));
-        }
     }
 
     public CandidateControllerImpl(List<Candidate> candidates) {

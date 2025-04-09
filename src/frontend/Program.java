@@ -20,6 +20,8 @@ public class Program {
         candidateControllerImpl.findByName("Tam");
         candidateControllerImpl.deleteByEmail("c@gmail.com");
         candidateControllerImpl.inData();
+        candidateControllerImpl.nhap();
+        candidateControllerImpl.inData();
     }
 
     public static void fakeData() {
